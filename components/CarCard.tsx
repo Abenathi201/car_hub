@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { CarProps } from '@/types';
 import { CustomButton } from '.';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImgUrl } from '@/utils';
 import CarDetails from './CarDetails';
 
 interface CarCardProps {
@@ -48,7 +48,7 @@ const CarCard = ({ car }: CarCardProps) => {
             </p>
 
             <div className="relative w-full h-40 my-3 object-contain">
-                <Image src="/hero.png" className="object-contain" alt="Car Model" fill priority />
+                <Image src={generateCarImgUrl(car)} className="object-contain" alt="Car Model" fill priority />
             </div>
 
             <div className="relative w-full mt-2">

@@ -4,6 +4,10 @@ import { useState } from "react";
 
 import { SearchManufacturer } from ".";
 
+const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
+    <button type="submit" className={`ml-10 z-10 ${otherClasses}`}></button>
+)
+
 const SearchBar = () => {
     const [manufacturer, setManufacturer] = useState("");
 
@@ -16,6 +20,8 @@ const SearchBar = () => {
                     manufacturer={manufacturer}
                     setManufacturer={setManufacturer}
                 />
+
+                <SearchButton otherClasses="sm:hidden" />
             </div>
         </form>
     )
